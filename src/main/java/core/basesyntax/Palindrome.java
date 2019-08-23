@@ -21,6 +21,15 @@ public class Palindrome {
      * <p>Результат: true</p>
      */
     public boolean isPalindrome(String text) {
-        return false;
+        text = text.replaceAll("[^\\p{L}\\p{Nd}]+", "").toLowerCase();
+        StringBuilder sb = new StringBuilder(text);
+        String reversedText = sb.reverse().toString().toLowerCase();
+        int count = 0;
+        for (int i = 0; i < text.length(); i++) {
+            if (reversedText.charAt(i) == text.charAt(i)) {
+                count++;
+            }
+        }
+        return count == text.length();
     }
 }
