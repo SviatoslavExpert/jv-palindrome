@@ -23,7 +23,7 @@ public class Palindrome {
     public boolean isPalindrome(String text) {
         text = text.replaceAll("[^\\p{L}\\p{Nd}]+", "").toLowerCase();
         StringBuilder sb = new StringBuilder(text);
-        String reversedText = sb.reverse().toString().toLowerCase();
+        String reversedText = sb.reverse().toString();
         return reversedText.equals(text);
     }
 }
